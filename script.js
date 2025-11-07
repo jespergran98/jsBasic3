@@ -1,3 +1,37 @@
+/**************************************\*\***************************************
+
+## !LES OPPGAVETEKSTEN NØYE!
+
+1.
+
+Bruk en vanlig 'for-løkke' til å iterere gjennom `people`-arrayet og utfør følgende:
+
+- Hvis objektets `name`-verdi er "Otto", skal ingen av endringene nedenfor gjøres
+  på det objektet (hint: bruk `continue`-nøkkelordet).
+
+- Lag en ny nøkkel på hvert person-objekt i arrayet kalt "city" og sett verdien
+  til en random by fra `cities`-arrayen.
+
+- Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for
+  menn og "Ms." for kvinner.
+- Øk alderen med 2.
+
+- Legg til "coding" i begynnelsen av hobby-arrayet i hvert objekt.
+
+**PS**: Bruk kun én løkke for å gjøre alle de ovennevnte stegene.
+
+Bruk `console.log(people)` etter løkken for å sjekke at endringene er riktige.
+
+Bruk løkken din til å regne ut den kombinerte alderen til alle person-objektene
+og lagre det i variabelen `combinedAge`.
+
+Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
+for alle, og lagre det i variabelen `averageAge`.
+
+Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
+
+**************************************\*\***************************************/
+
 const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
 const people = [
@@ -51,34 +85,6 @@ const people = [
 	}
 ];
 
-// Oppgave 1:
-
-// Bruk en vanlig 'for-løkke' til å iterere gjennom `people`-arrayet og utfør følgende:
-
-// - Hvis objektets `name`-verdi er "Otto", skal ingen av endringene nedenfor gjøres
-//  på det objektet (hint: bruk `continue`-nøkkelordet).
-
-// - Lag en ny nøkkel på hvert person-objekt i arrayet kalt "city" og sett verdien
-//  til en random by fra `cities`-arrayen.
-
-// - Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for
-//  menn og "Ms." for kvinner.
-// - Øk alderen med 2.
-
-// - Legg til "coding" i begynnelsen av hobby-arrayet i hvert objekt.
-
-// **PS**: Bruk kun én løkke for å gjøre alle de ovennevnte stegene.
-
-// Bruk `console.log(people)` etter løkken for å sjekke at endringene er riktige.
-
-// Bruk løkken din til å regne ut den kombinerte alderen til alle person-objektene
-// og lagre det i variabelen `combinedAge`.
-
-// Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
-// for alle, og lagre det i variabelen `averageAge`.
-
-// Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
-
 let combinedAge = 0; // Variabel for å summere den totale alderen til alle personer (ekskludert Otto) etter aldersjusteringer
 let averageAge = 0; // Variabel for å lagre den beregnede gjennomsnittsalderen (ekskludert Otto)
 let count = 0; // teller for antall personer utenom Otto
@@ -99,22 +105,24 @@ averageAge = combinedAge / count; // Beregn gjennomsnittsalderen etter løkken (
 console.log(people); // Skriv ut people-arrayet for å verifisere endringene
 
 
-// Oppgave 2:
+/**************************************\*\*************************************** 2.
+2.
+Lag følgende funksjon:
 
-//Lag følgende funksjon:
+Funksjonen skal ta inn ett tall som parameter.
 
-//Funksjonen skal ta inn ett tall som parameter.
+Funksjonen skal returnere et array med tilfeldige tall mellom 1 og 6.
+Lengden på arrayet bestemmes av tallet som funksjonen mottar som parameter
+(tenk på det som antall terninger vi kaster).
 
-//Funksjonen skal returnere et array med tilfeldige tall mellom 1 og 6.
-//Lengden på arrayet bestemmes av tallet som funksjonen mottar som parameter
-//(tenk på det som antall terninger vi kaster).
+Eksempler:
+diceRoller(4) skal returnere noe som: [4, 1, 2, 6]
+diceRoller(6) skal returnere noe som: [5, 5, 6, 2, 3, 4]
 
-//Eksempler:
-//diceRoller(4) skal returnere noe som: [4, 1, 2, 6]
-//diceRoller(6) skal returnere noe som: [5, 5, 6, 2, 3, 4]
+Legg til en andre parameter i funksjonen som bestemmer hvor mange sider terningen skal ha.
+diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 
-//Legg til en andre parameter i funksjonen som bestemmer hvor mange sider terningen skal ha.
-//diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
+**************************************\*\***************************************/
 
 
 function diceRoller(throws, sides = 6) { // Funksjon som tar inn antall kast og antall sider (standard 6)
@@ -133,29 +141,30 @@ console.log(diceRoller(4));        // f.eks. [4, 1, 2, 6]
 console.log(diceRoller(6));        // f.eks. [5, 5, 6, 2, 3, 4]
 console.log(diceRoller(5, 20));    // f.eks. [18, 3, 15, 9, 12]
 
+/**************************************\*\*************************************** 3.
+3.
+Lag følgende funksjon:
 
-// Oppgave 3:
+Funksjonen skal ta inn ett array av strings som parameter.
 
-//Lag følgende funksjon:
+Inne i funksjonen, gjør følgende:
 
-//Funksjonen skal ta inn ett array av strings som parameter.
+Skriv en løkke som itererer gjennom stringene i arrayet, og gjør følgende:
 
-//Inne i funksjonen, gjør følgende:
+- Fjern mellomrom fra starten og slutten av hvert ord.
+- Gjør alle ordene om til små bokstaver.
 
-//Skriv en løkke som itererer gjennom stringene i arrayet, og gjør følgende:
+Bruk en "for...of"-løkke.
 
-//- Fjern mellomrom fra starten og slutten av hvert ord.
-//- Gjør alle ordene om til små bokstaver.
+Etter løkken, bruk en metode for å sette sammen arrayet til en enkelt string
+med et enkelt mellomrom mellom ordene (" "), og returner den resulterende stringen.
 
-//Bruk en "for...of"-løkke.
+Eksempel:
+[" thIS", "teXt ", " nEeds ", "to", "BE", "cleANED ", " Up"]
+skal returnere:
+"this text needs to be cleaned up"
 
-//Etter løkken, bruk en metode for å sette sammen arrayet til en enkelt string
-//med et enkelt mellomrom mellom ordene (" "), og returner den resulterende stringen.
-
-//Eksempel:
-//[" thIS", "teXt ", " nEeds ", "to", "BE", "cleANED ", " Up"]
-//skal returnere:
-//"this text needs to be cleaned up"
+**************************************\*\***************************************/
 
 const pokemon = [
   "     PiKaCHu ",
@@ -177,26 +186,47 @@ function cleanText(inputArray) { // Funksjon som tar inn et array av strings som
 
 console.log(cleanText(pokemon)); // Skriv ut resultatet av cleanText-funksjonen
 
+/**************************************\*\*************************************** 4.
+4.
+Fullfør funksjonen nedenfor for å oppnå følgende:
 
-// Oppgave 4:
+Returner stringen som mottas i første parameter med følgende endringer:
 
-// Fullfør funksjonen nedenfor for å oppnå følgende:
+Hver bokstav i stringen som matcher `charA` (andre parameteret) skal erstattes
+med `charB` (tredje parameteret), og VICE VERSA - det vil si at bokstaver som
+matcher `charA` skal byttes med `charB`, og bokstaver som matcher `charB` skal
+byttes med `charA`.
 
-// Returner stringen som mottas i første parameter med følgende endringer:
+Eksempler:
 
-// Hver bokstav i stringen som matcher `charA` (andre parameteret) skal erstattes 
-// med `charB` (tredje parameteret), og VICE VERSA - det vil si at bokstaver som 
-// matcher `charA` skal byttes med `charB`, og bokstaver som matcher `charB` skal 
-// byttes med `charA`.
+doubleSwap("this is a string", "i", "s")
+skal returnere "thsi si a itrsng"
 
-// Eksempler:
+doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")
+skal returnere "maybe another approach is necessary"
 
-// doubleSwap("this is a string", "i", "s")
-// skal returnere "thsi si a itrsng"
+doubleSwap("what is the point of this?", "o", "t")
+skal returnere "whao is ohe ptino tf ohis?"
 
-// doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")
-// skal returnere "maybe another approach is necessary"
+**************************************\*\***************************************/
 
-// doubleSwap("what is the point of this?", "o", "t")
-// skal returnere "whao is ohe ptino tf ohis?"
+function doubleSwap(str, charA, charB) { // Funksjon som tar inn en string og to tegn som skal byttes
+  let result = ""; // Tom string for å bygge opp resultatet
+  
+  for (let i = 0; i < str.length; i++) { // Iterer gjennom hvert tegn i strengen med en for-løkke
+    if (str[i] === charA) { // Sjekk om gjeldende tegn matcher charA
+      result += charB; // Erstatt med charB
+    } else if (str[i] === charB) { // Sjekk om gjeldende tegn matcher charB
+      result += charA; // Erstatt med charA
+    } else { // Hvis tegnet ikke matcher noen av de to
+      result += str[i]; // Behold det originale tegnet
+    }
+  }
+  
+  return result; // Returner den modifiserte strengen
+}
 
+console.log(doubleSwap("this is a string", "i", "s")); // "thsi si a itrsng"
+console.log(doubleSwap("m#ybe #nother #ppro#ch is necess#ry", "#", "a")); // maybe another approach is necessary
+console.log(doubleSwap("what is the point of this?", "o", "t")); // whao is ohe ptino tf ohis?
+console.log(doubleSwap("pikachu uses thunder attack!", "a", "u")); // pikucha ases thander uttuck!
