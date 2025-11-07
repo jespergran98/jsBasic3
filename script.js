@@ -103,14 +103,14 @@ const pokemon = [
   "jIGgLyPUFF   "
 ];
 
-function cleanText(inputArray) {
-  const cleanedArray = [];
-  for (const str of inputArray) {
-    const trimmed = str.trim().toLowerCase();
-    const capitalized = trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
-    cleanedArray.push(capitalized);
+function cleanText(inputArray) { // Funksjon som tar inn et array av strings som parameter
+  const cleanedArray = []; // Tomt array for å lagre de rensede og kapitaliserte ordene
+  for (const str of inputArray) { // Iterer gjennom hvert element i inputArray med en for...of-løkke
+    const trimmed = str.trim().toLowerCase(); // Fjern mellomrom fra start og slutt, og gjør om til små bokstaver
+    const capitalized = trimmed.charAt(0).toUpperCase() + trimmed.slice(1); // Kapitaliser første bokstav og legg til resten av strengen
+    cleanedArray.push(capitalized); // Legg den kapitaliserte strengen til cleanedArray
   }
-  return cleanedArray.join(" ");
+  return cleanedArray.join(" "); // Sett sammen arrayet til en enkelt string med mellomrom mellom ordene og returner resultatet
 }
 
-console.log(cleanText(pokemon));
+console.log(cleanText(pokemon)); // Skriv ut resultatet av cleanText-funksjonen
