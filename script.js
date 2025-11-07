@@ -103,5 +103,13 @@ const pokemon = [
   "jIGgLyPUFF   "
 ];
 
+function cleanText(inputArray) {
+  const cleanedArray = [];
+  for (const str of inputArray) {
+    const trimmed = str.trim().toLowerCase();
+    cleanedArray.push(trimmed);
+  }
+  return cleanedArray.join(" ");
+}
 
-
+console.log(cleanText(pokemon));
