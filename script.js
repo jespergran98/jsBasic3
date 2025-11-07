@@ -94,3 +94,14 @@ console.log(people); // Skriv ut people-arrayet for å verifisere endringene
 //[" thIS", "teXt ", " nEeds ", "to", "BE", "cleANED ", " Up"]
 //skal returnere:
 //"this text needs to be cleaned up"
+
+const pokemon = [
+  "     PiKaCHu ",
+  "chArIZard    ",
+  " BulbaSAUr ",
+  "sQUirtLE",
+  "jIGgLyPUFF   "
+];
+
+
+
