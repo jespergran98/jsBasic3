@@ -52,6 +52,33 @@ const people = [
 ];
 
 // Oppgave 1:
+
+// Bruk en vanlig 'for-løkke' til å iterere gjennom `people`-arrayet og utfør følgende:
+
+// - Hvis objektets `name`-verdi er "Otto", skal ingen av endringene nedenfor gjøres
+//  på det objektet (hint: bruk `continue`-nøkkelordet).
+
+// - Lag en ny nøkkel på hvert person-objekt i arrayet kalt "city" og sett verdien
+//  til en random by fra `cities`-arrayen.
+
+// - Lag en ny nøkkel på hvert person-objekt kalt "title" og sett den til "Mr." for
+//  menn og "Ms." for kvinner.
+// - Øk alderen med 2.
+
+// - Legg til "coding" i begynnelsen av hobby-arrayet i hvert objekt.
+
+// **PS**: Bruk kun én løkke for å gjøre alle de ovennevnte stegene.
+
+// Bruk `console.log(people)` etter løkken for å sjekke at endringene er riktige.
+
+// Bruk løkken din til å regne ut den kombinerte alderen til alle person-objektene
+// og lagre det i variabelen `combinedAge`.
+
+// Deretter, etter løkken, bruk den kombinerte alderen til å regne ut gjennomsnittsalderen
+// for alle, og lagre det i variabelen `averageAge`.
+
+// Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over Otto!
+
 let combinedAge = 0; // Variabel for å summere den totale alderen til alle personer (ekskludert Otto) etter aldersjusteringer
 let averageAge = 0; // Variabel for å lagre den beregnede gjennomsnittsalderen (ekskludert Otto)
 let count = 0; // teller for antall personer utenom Otto
@@ -73,6 +100,41 @@ console.log(people); // Skriv ut people-arrayet for å verifisere endringene
 
 
 // Oppgave 2:
+
+//Lag følgende funksjon:
+
+//Funksjonen skal ta inn ett tall som parameter.
+
+//Funksjonen skal returnere et array med tilfeldige tall mellom 1 og 6.
+//Lengden på arrayet bestemmes av tallet som funksjonen mottar som parameter
+//(tenk på det som antall terninger vi kaster).
+
+//Eksempler:
+//diceRoller(4) skal returnere noe som: [4, 1, 2, 6]
+//diceRoller(6) skal returnere noe som: [5, 5, 6, 2, 3, 4]
+
+//Legg til en andre parameter i funksjonen som bestemmer hvor mange sider terningen skal ha.
+//diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
+
+
+function diceRoller(throws, sides = 6) {
+  const resultat = [];
+  
+  for (let i = 0; i < throws; i++) {
+    const tilfeldigTall = Math.floor(Math.random() * sides) + 1;
+    resultat.push(tilfeldigTall);
+  }
+  
+  return resultat;
+}
+
+// Eksempler på bruk:
+console.log(diceRoller(4));        // f.eks. [4, 1, 2, 6]
+console.log(diceRoller(6));        // f.eks. [5, 5, 6, 2, 3, 4]
+console.log(diceRoller(5, 20));    // f.eks. [18, 3, 15, 9, 12]
+
+
+// Oppgave 3:
 
 //Lag følgende funksjon:
 
@@ -114,3 +176,4 @@ function cleanText(inputArray) { // Funksjon som tar inn et array av strings som
 }
 
 console.log(cleanText(pokemon)); // Skriv ut resultatet av cleanText-funksjonen
+
