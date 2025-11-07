@@ -117,15 +117,15 @@ console.log(people); // Skriv ut people-arrayet for å verifisere endringene
 //diceRoller(5, 20) skal returnere et array med 5 tilfeldige tall fra 1-20.
 
 
-function diceRoller(throws, sides = 6) {
-  const resultat = [];
+function diceRoller(throws, sides = 6) { // Funksjon som tar inn antall kast og antall sider (standard 6)
+  const resultat = []; // Tomt array for å lagre terningkastene
   
-  for (let i = 0; i < throws; i++) {
-    const tilfeldigTall = Math.floor(Math.random() * sides) + 1;
-    resultat.push(tilfeldigTall);
+  for (let i = 0; i < throws; i++) { // Iterer gjennom antall kast med en for-løkke
+    const tilfeldigTall = Math.floor(Math.random() * sides) + 1; // Generer tilfeldig tall mellom 1 og antall sider
+    resultat.push(tilfeldigTall); // Legg det tilfeldige tallet til resultat-arrayet
   }
   
-  return resultat;
+  return resultat; // Returner arrayet med alle terningkastene
 }
 
 // Eksempler på bruk:
