@@ -107,7 +107,8 @@ function cleanText(inputArray) {
   const cleanedArray = [];
   for (const str of inputArray) {
     const trimmed = str.trim().toLowerCase();
-    cleanedArray.push(trimmed);
+    const capitalized = trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+    cleanedArray.push(capitalized);
   }
   return cleanedArray.join(" ");
 }
